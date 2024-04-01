@@ -2,6 +2,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "shap-button": [
+        "./dist/shap-button"
+      ],
+      "shap-ui": [
+        "./dist/shap-ui"
+      ]
+    },
+    "plugins": [
+      {"name": "@angular/language-service"}
+    ],
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,

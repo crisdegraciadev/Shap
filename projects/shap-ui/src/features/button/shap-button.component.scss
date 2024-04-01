@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap");
+@import "../../styles/variables";
+
+.shap-button {
+  width: "auto";
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.shap-button-size-small {
+  height: 2rem;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+}
+
+.shap-button-size-medium {
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+}
+
+.shap-button-size-large {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1.125rem;
+}
+
+.shap-button-color-primary {
+  background-color: $color-primary-500;
+  color: $white;
+
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    background-color: $color-primary-700;
+  }
+
+  &:active {
+    background-color: $color-primary-800;
+  }
+}
+
+.shap-button-color-secondary {
+  background-color: $color-secondary-700;
+  color: $white;
+
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    background-color: $color-secondary-800;
+  }
+
+  &:active {
+    background-color: $color-secondary-900;
+  }
+}
+
+.shap-button-color-success {
+  background-color: $color-success-600;
+  color: $white;
+
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    background-color: $color-success-700;
+  }
+
+  &:active {
+    background-color: $color-success-800;
+  }
+}
+
+.shap-button-color-danger {
+  background-color: $color-danger-400;
+  color: $white;
+
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    background-color: $color-danger-600;
+  }
+
+  &:active {
+    background-color: $color-danger-700;
+  }
+}
