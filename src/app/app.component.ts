@@ -11,4 +11,8 @@ import { ShapButtonComponent } from 'shap-ui';
 })
 export class AppComponent {
   title = 'shap';
+
+  click() {
+    console.log('clicked');
+  }
 }

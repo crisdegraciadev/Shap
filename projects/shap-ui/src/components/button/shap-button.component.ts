@@ -1,11 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, input } from '@angular/core';
-import { Color, Size } from '../../types';
+import {
+  Component,
+  ViewEncapsulation,
+  computed,
+  input,
+  output,
+} from '@angular/core';
+import { Color, Icons, Size } from '../../types';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
   selector: 'shap-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LucideAngularModule],
   templateUrl: './shap-button.component.html',
   styleUrl: './shap-button.component.scss',
 })
@@ -13,6 +20,8 @@ export class ShapButtonComponent {
   value = input<string>();
   size = input<Size>('medium');
   color = input<Color>('primary');
+  icons = input<Icons>();
+  iconStrokeWidth = input<number>(3);
 
   private readonly DEFAULT = 'shap-button';
 
@@ -29,9 +38,17 @@ export class ShapButtonComponent {
     danger: 'shap-button-color-danger',
   };
 
+  private readonly ICON_SIZES: Record<Size, number> = {
+    small: 16,
+    medium: 18,
+    large: 22,
+  };
+
   classes = computed(() => [
     this.DEFAULT,
     this.SIZES[this.size()],
     this.COLORS[this.color()],
   ]);
+
+  iconSize = computed(() => this.ICON_SIZES[this.size()]);
 }

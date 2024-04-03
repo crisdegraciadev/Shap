@@ -1,25 +1,178 @@
 <div class="container">
-  <div class="row">
-    <shap-button [value]="'Small'" [size]="'small'" [color]="'primary'" />
-    <shap-button [value]="'Medium'" [size]="'medium'" [color]="'primary'" />
-    <shap-button [value]="'Large'" [size]="'large'" [color]="'primary'" />
+  <div class="section">
+    <div class="row">
+      <h3>Button Variants</h3>
+    </div>
+
+    <div class="row">
+      <shap-button [value]="'Small'" [size]="'small'" [color]="'primary'" />
+      <shap-button [value]="'Medium'" [size]="'medium'" [color]="'primary'" />
+      <shap-button [value]="'Large'" [size]="'large'" [color]="'primary'" />
+    </div>
+
+    <div class="row">
+      <shap-button [value]="'Small'" [size]="'small'" [color]="'secondary'" />
+      <shap-button [value]="'Medium'" [size]="'medium'" [color]="'secondary'" />
+      <shap-button [value]="'Large'" [size]="'large'" [color]="'secondary'" />
+    </div>
+
+    <div class="row">
+      <shap-button [value]="'Small'" [size]="'small'" [color]="'success'" />
+      <shap-button [value]="'Medium'" [size]="'medium'" [color]="'success'" />
+      <shap-button [value]="'Large'" [size]="'large'" [color]="'success'" />
+    </div>
+
+    <div class="row">
+      <shap-button [value]="'Small'" [size]="'small'" [color]="'danger'" />
+      <shap-button [value]="'Medium'" [size]="'medium'" [color]="'danger'" />
+      <shap-button [value]="'Large'" [size]="'large'" [color]="'danger'" />
+    </div>
   </div>
 
-  <div class="row">
-    <shap-button [value]="'Small'" [size]="'small'" [color]="'secondary'" />
-    <shap-button [value]="'Medium'" [size]="'medium'" [color]="'secondary'" />
-    <shap-button [value]="'Large'" [size]="'large'" [color]="'secondary'" />
+  <div class="section">
+    <div class="row">
+      <h3>Button with Icons</h3>
+    </div>
+
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+      />
+    </div>
+
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ right: 'chevron-right' }"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ right: 'chevron-right' }"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ right: 'chevron-right' }"
+      />
+    </div>
+
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left' }"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left' }"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left' }"
+      />
+    </div>
   </div>
 
-  <div class="row">
-    <shap-button [value]="'Small'" [size]="'small'" [color]="'success'" />
-    <shap-button [value]="'Medium'" [size]="'medium'" [color]="'success'" />
-    <shap-button [value]="'Large'" [size]="'large'" [color]="'success'" />
-  </div>
+  <div class="section">
+    <div class="row">
+      <h3>Button with Stroke Widths</h3>
+    </div>
 
-  <div class="row">
-    <shap-button [value]="'Small'" [size]="'small'" [color]="'danger'" />
-    <shap-button [value]="'Medium'" [size]="'medium'" [color]="'danger'" />
-    <shap-button [value]="'Large'" [size]="'large'" [color]="'danger'" />
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="1"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="1"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="1"
+      />
+    </div>
+
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="4"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="4"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="4"
+      />
+    </div>
+
+    <div class="row">
+      <shap-button
+        [value]="'Small'"
+        [size]="'small'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="8"
+      />
+      <shap-button
+        [value]="'Medium'"
+        [size]="'medium'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="8"
+      />
+      <shap-button
+        [value]="'Large'"
+        [size]="'large'"
+        [color]="'primary'"
+        [icons]="{ left: 'chevron-left', right: 'chevron-right' }"
+        [iconStrokeWidth]="8"
+      />
+    </div>
   </div>
 </div>

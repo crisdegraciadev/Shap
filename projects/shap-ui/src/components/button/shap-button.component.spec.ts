@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ShapButtonComponent } from './shap-button.component';
 import { Color, Size } from '../../types';
+import { LucideAngularModule, icons } from 'lucide-angular';
+import { importProvidersFrom } from '@angular/core';
 
 describe('ShapButtonComponent', () => {
   let component: ShapButtonComponent;
@@ -11,6 +13,7 @@ describe('ShapButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ShapButtonComponent],
+      providers: [importProvidersFrom(LucideAngularModule.pick(icons))],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ShapButtonComponent);
@@ -83,6 +86,29 @@ describe('ShapButtonComponent', () => {
 
       expect(component.classes()).toContain(SIZES.large);
     });
+
+    it('should compute iconSize depending on size', () => {
+      const ICON_SIZES: Record<Size, number> = {
+        small: 16,
+        medium: 18,
+        large: 22,
+      };
+
+      fixture.componentRef.setInput('size', 'small');
+      fixture.detectChanges();
+
+      expect(component.iconSize()).toBe(ICON_SIZES.small);
+
+      fixture.componentRef.setInput('size', 'medium');
+      fixture.detectChanges();
+
+      expect(component.iconSize()).toBe(ICON_SIZES.medium);
+
+      fixture.componentRef.setInput('size', 'large');
+      fixture.detectChanges();
+
+      expect(component.iconSize()).toBe(ICON_SIZES.large);
+    });
   });
 
   describe('input: color', () => {
@@ -121,6 +147,84 @@ describe('ShapButtonComponent', () => {
       fixture.detectChanges();
 
       expect(component.classes()).toContain(COLORS.danger);
+    });
+  });
+
+  describe('input: icons', () => {
+    it('should be defined', () => {
+      expect(component.icons).toBeDefined();
+    });
+
+    it('should have undefined as default value', () => {
+      expect(component.icons()).toBeUndefined();
+    });
+
+    it('should render left icon if left property is provided', () => {
+      fixture.componentRef.setInput('icons', { left: 'chevron-left' });
+      fixture.detectChanges();
+
+      const leftIcon = fixture.debugElement.query(By.css('.icon-left'));
+      expect(leftIcon).toBeTruthy();
+    });
+
+    it('should render right icon if right property is provided', () => {
+      fixture.componentRef.setInput('icons', { right: 'chevron-right' });
+      fixture.detectChanges();
+
+      const rightIcon = fixture.debugElement.query(By.css('.icon-right'));
+      expect(rightIcon).toBeTruthy();
+    });
+
+    it('should render left and right icon if left and right properties are provided', () => {
+      fixture.componentRef.setInput('icons', {
+        left: 'chevron-left',
+        right: 'chevron-right',
+      });
+
+      fixture.detectChanges();
+
+      const leftIcon = fixture.debugElement.query(By.css('.icon-left'));
+      expect(leftIcon).toBeTruthy();
+
+      const rightIcon = fixture.debugElement.query(By.css('.icon-right'));
+      expect(rightIcon).toBeTruthy();
+    });
+
+    it('should render no icons if neither left nor right properties are provided', () => {
+      const rightIcon = fixture.debugElement.query(By.css('.icon-right'));
+      expect(rightIcon).toBeFalsy();
+
+      const leftIcon = fixture.debugElement.query(By.css('.icon-left'));
+      expect(leftIcon).toBeFalsy();
+    });
+  });
+
+  describe('input: iconStrokeWidth', () => {
+    it('should be defined', () => {
+      expect(component.iconStrokeWidth).toBeDefined();
+    });
+
+    it("should have '3' as default value", () => {
+      expect(component.iconStrokeWidth()).toBe(3);
+    });
+
+    it("should change icon's strokeWidth property if provided", () => {
+      fixture.componentRef.setInput('iconStrokeWidth', 2);
+      fixture.componentRef.setInput('icons', {
+        left: 'chevron-left',
+        right: 'chevron-right',
+      });
+
+      fixture.detectChanges();
+
+      const leftIcon = fixture.debugElement.query(By.css('.icon-left'));
+      const rightIcon = fixture.debugElement.query(By.css('.icon-right'));
+
+      const { strokeWidth: leftStrokeWidth } = leftIcon.componentInstance;
+      const { strokeWidth: rightStrokeWidth } = rightIcon.componentInstance;
+
+      expect(leftStrokeWidth).toBe(2);
+      expect(rightStrokeWidth).toBe(2);
     });
   });
 });
