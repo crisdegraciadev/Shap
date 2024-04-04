@@ -1,10 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
-import { ShapButtonComponent } from './shap-button.component';
 import { Color, Size } from '../../types';
 import { LucideAngularModule, icons } from 'lucide-angular';
 import { importProvidersFrom } from '@angular/core';
+import { ShapButtonComponent } from './button.component';
+import { Colors, Sizes } from '../../constants';
 
 describe('ShapButtonComponent', () => {
   let component: ShapButtonComponent;
@@ -61,30 +62,30 @@ describe('ShapButtonComponent', () => {
     });
 
     it("should have 'medium' as default value", () => {
-      expect(component.size()).toBe('medium');
+      expect(component.size()).toBe(Sizes.MEDIUM);
     });
 
     it('should compute classes depending on size', () => {
-      const SIZES: Record<Size, string> = {
+      const SIZE_CLASSES: Record<Size, string> = {
         small: 'shap-button-size-small',
         medium: 'shap-button-size-medium',
         large: 'shap-button-size-large',
       };
 
-      fixture.componentRef.setInput('size', 'small');
+      fixture.componentRef.setInput('size', Sizes.SMALL);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(SIZES.small);
+      expect(component.classes()).toContain(SIZE_CLASSES.small);
 
-      fixture.componentRef.setInput('size', 'medium');
+      fixture.componentRef.setInput('size', Sizes.MEDIUM);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(SIZES.medium);
+      expect(component.classes()).toContain(SIZE_CLASSES.medium);
 
-      fixture.componentRef.setInput('size', 'large');
+      fixture.componentRef.setInput('size', Sizes.LARGE);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(SIZES.large);
+      expect(component.classes()).toContain(SIZE_CLASSES.large);
     });
 
     it('should compute iconSize depending on size', () => {
@@ -94,17 +95,17 @@ describe('ShapButtonComponent', () => {
         large: 22,
       };
 
-      fixture.componentRef.setInput('size', 'small');
+      fixture.componentRef.setInput('size', Sizes.SMALL);
       fixture.detectChanges();
 
       expect(component.iconSize()).toBe(ICON_SIZES.small);
 
-      fixture.componentRef.setInput('size', 'medium');
+      fixture.componentRef.setInput('size', Sizes.MEDIUM);
       fixture.detectChanges();
 
       expect(component.iconSize()).toBe(ICON_SIZES.medium);
 
-      fixture.componentRef.setInput('size', 'large');
+      fixture.componentRef.setInput('size', Sizes.LARGE);
       fixture.detectChanges();
 
       expect(component.iconSize()).toBe(ICON_SIZES.large);
@@ -121,32 +122,32 @@ describe('ShapButtonComponent', () => {
     });
 
     it('should compute classes depending on color', () => {
-      const COLORS: Record<Color, string> = {
+      const COLOR_CLASSES: Record<Color, string> = {
         primary: 'shap-button-color-primary',
         secondary: 'shap-button-color-secondary',
         success: 'shap-button-color-success',
         danger: 'shap-button-color-danger',
       };
 
-      fixture.componentRef.setInput('color', 'primary');
+      fixture.componentRef.setInput('color', Colors.PRIMARY);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(COLORS.primary);
+      expect(component.classes()).toContain(COLOR_CLASSES.primary);
 
-      fixture.componentRef.setInput('color', 'secondary');
+      fixture.componentRef.setInput('color', Colors.SECONDARY);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(COLORS.secondary);
+      expect(component.classes()).toContain(COLOR_CLASSES.secondary);
 
-      fixture.componentRef.setInput('color', 'success');
+      fixture.componentRef.setInput('color', Colors.SUCCESS);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(COLORS.success);
+      expect(component.classes()).toContain(COLOR_CLASSES.success);
 
-      fixture.componentRef.setInput('color', 'danger');
+      fixture.componentRef.setInput('color', Colors.DANGER);
       fixture.detectChanges();
 
-      expect(component.classes()).toContain(COLORS.danger);
+      expect(component.classes()).toContain(COLOR_CLASSES.danger);
     });
   });
 

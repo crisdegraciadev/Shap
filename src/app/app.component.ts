@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ShapButtonComponent } from 'shap-ui';
+import {
+  CheckboxDirective,
+  ShapButtonComponent,
+  ShapCheckboxComponent,
+} from 'shap-ui';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ShapButtonComponent],
+  imports: [
+    RouterOutlet,
+    ShapButtonComponent,
+    ShapCheckboxComponent,
+    CheckboxDirective,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

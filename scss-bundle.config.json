@@ -1,0 +1,6 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/shap-ui/assets/styles/_styles.scss",
+    "outFile": "./dist/shap-ui/_shap-ui.styles.scss"
+  }
+}

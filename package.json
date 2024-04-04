@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "build:scss": "scss-bundle -p ./scss-bundle.config.json",
+    "build:lib": "ng build shap-ui && npm run build:scss",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
@@ -31,6 +33,7 @@
     "jest-preset-angular": "^14.0.3",
     "lucide-angular": "^0.364.0",
     "rxjs": "~7.8.0",
+    "scss-bundle": "^3.1.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
