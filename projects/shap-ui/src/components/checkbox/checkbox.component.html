@@ -1,3 +1,4 @@
-<ng-container>
-  <input type="checkbox" shapCheckbox [size]="size()" />
-</ng-container>
+<div class="shap-checkbox">
+  <input class="shap-checkbox-input" [ngClass]="classes()" type="checkbox" />
+  <label class="shap-checkbox-label" [ngClass]="classes()">{{ label() }}</label>
+</div>

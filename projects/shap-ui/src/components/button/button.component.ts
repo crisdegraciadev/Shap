@@ -18,8 +18,6 @@ export class ShapButtonComponent {
   icons = input<Icons>();
   iconStrokeWidth = input<number>(3);
 
-  private readonly DEFAULT = 'shap-button';
-
   private readonly SIZE_CLASSES: Record<Size, string> = {
     [Sizes.SMALL]: 'shap-button-size-small',
     [Sizes.MEDIUM]: 'shap-button-size-medium',
@@ -40,7 +38,6 @@ export class ShapButtonComponent {
   };
 
   classes = computed(() => [
-    this.DEFAULT,
     this.SIZE_CLASSES[this.size()],
     this.COLOR_CLASSES[this.color()],
   ]);

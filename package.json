@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "build:scss": "scss-bundle -p ./scss-bundle.config.json",
     "build:lib": "ng build shap-ui && npm run build:scss",
+    "build:lib:watch": "ng build shap-ui --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"

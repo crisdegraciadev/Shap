@@ -3,6 +3,7 @@ import {
   Directive,
   ElementRef,
   Renderer2,
+  inject,
   input,
 } from '@angular/core';
 import { Size } from '../../types';
@@ -23,10 +24,10 @@ export class CheckboxDirective implements AfterViewInit {
     large: 'shap-checkbox-size-large',
   };
 
-  constructor(
-    private renderer: Renderer2,
-    public el: ElementRef,
-  ) {}
+  private renderer = inject(Renderer2);
+  public el = inject(ElementRef);
+
+  constructor() {}
 
   ngAfterViewInit(): void {
     this.renderer.addClass(this.el.nativeElement, this.SIZES[this.size()]);
